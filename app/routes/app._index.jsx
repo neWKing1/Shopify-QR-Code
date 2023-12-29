@@ -77,7 +77,7 @@ const QRTable = ({ qrCodes, start, navigate, qrCodesLength, query }) => (
           navigate(`/app/?start=${start - 5}${query !== '' ? `&key=${query}` : ''}`)
         },
         hasNext: false,
-        hasNext: qrCodesLength - start < 5 ? false : true,
+        hasNext: qrCodesLength - start <= 5 ? false : true,
         onNext: () => {
           navigate(`/app/?start=${start + 5}${query !== '' ? `&key=${query}` : ''}`)
         },
